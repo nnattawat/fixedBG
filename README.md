@@ -21,7 +21,7 @@ In your web page:
 </div>
 
 <style type="text/css">
-	.page:nth-child(1){
+.page:nth-child(1){
     background-image: url("pic1.jpg");
   }
   .page:nth-child(2){
@@ -42,7 +42,7 @@ $(function($) {
 _(Coming soon)_
 
 ## Examples
-_(For the demo, I will create a Github page soon. For now you can clone the project and open /demo/index.html in your Browser)_
+_For the demo, I will create a Github page soon. For now you can clone the project and open /demo/index.html in your Browser_
 
 ## Release History
 _(Nothing yet)_
