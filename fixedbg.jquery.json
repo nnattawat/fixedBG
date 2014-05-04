@@ -1,0 +1,28 @@
+{
+  "name": "fixedbg",
+  "title": "jQuery Plugin - Fixed Background Image",
+  "description": "Fixed background image while scrolling through content of a page. Once new page is scrolled to then new background image of a new page will be shown.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/nnattawat/fixedBG",
+  "author": {
+    "name": "Nattawat Nonsung",
+    "url": "https://github.com/nnattawat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nnattawat/fixedBG"
+  },
+  "bugs": "https://github.com/nnattawat/fixedBG/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  },
+  "keywords": [
+    "jquery-plugin"
+  ]
+}
