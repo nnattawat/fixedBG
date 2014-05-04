@@ -16,14 +16,14 @@
     paddingButtom = +paddingButtom.substring(0, paddingButtom.length -2);
 
     var height = $(window).innerHeight() - paddingTop - paddingButtom
-    dom.height(height);
+    dom.css("min-height", (height+"px"));
 
     // el's top position
     var elTop = dom.offset().top; 
     dom.data("elTop", elTop);
 
     // el's bottom position
-    var elBottom = elTop + height + paddingTop + paddingButtom; 
+    var elBottom = elTop + dom.height() + paddingTop + paddingButtom; 
     dom.data("elBottom", elBottom);
   }
 
@@ -32,12 +32,26 @@
     var self = this;
     // Define default setting
     var settings = $.extend({
-      
+      autoAdjust: true
     }, options );
 
     this.each(function(){
       setHeightToWindowSize($(this));
     });
+
+    this.first().css("background-attachment", "fixed");
+
+    /*
+      Auto adjust by:
+        - set background-size: cover; so that it try to make full image visible
+        - set background-repeat: no-repeat;
+    */ 
+    if(settings.autoAdjust){
+      this.css({
+        "background-size": "cover",
+        "background-repeat": "no-repeat"
+      });
+    }
 
     $(window).resize(function(){
       self.each(function(){
