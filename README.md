@@ -21,7 +21,7 @@ In your web page:
 </div>
 
 <style type="text/css">
-.page:nth-child(1){
+	.page:nth-child(1){
     background-image: url("pic1.jpg");
   }
   .page:nth-child(2){
