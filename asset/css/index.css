@@ -1,11 +1,14 @@
 #page-3{
-  background-image: url("../img/pic4.jpg");
+  background-image: url("../img/snow.jpeg");
 }
 #page-1{
   background-image: url("../img/rock.jpg");
 }
 #page-2{
   background-image: url("../img/leaves.jpg");
+}
+#page-4{
+  background-image: url("../img/pic4.jpg");
 }
 * {
 	padding: 0px;
@@ -20,7 +23,7 @@ footer{
 }
 
 .page {
-	padding: 90px 20%;
+	padding: 90px 200px;
 }
 .page .content {
 	padding: 30px;

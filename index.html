@@ -10,11 +10,11 @@
 
   </head>
   <body>
-    <a href="https://github.com/nnattawat/flip"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <a href="https://github.com/nnattawat/fixedBG"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
     <div class="page" id="page-1">
       <div class="content">
         <h2>Fixed Background Images</h2>
-        <p class="lead">A jQuery plugin to fix background image while scrolling through content of a page. Once new page is scrolled to then a background image changes. It works responsively.</p>
+        <p class="lead">A jQuery plugin to fix background image while scrolling through content of a page. Once new page is scrolled to then a background image changes. The plugin works responsively with both short and long contents.</p>
         <p class="lead text-info"><strong>Scrolling to this site to see example</strong></p>
         <div class="download">
           <a href="https://github.com/nnattawat/fixedbg/zipball/master" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-download"></span> Download .zip</a>
@@ -26,26 +26,74 @@
     <div class="page" id="page-2">
       <div class="content">
         <h3>How to include</h3>
-        <p>Simply include jquery.js and jquery.flip.js you have downloaded</p>
-        <pre>&lt;script src="http://code.jquery.com/jquery-[latest].min.js"&gt;<br/>&lt;script src="jquery.flip.js"&gt;</pre>
+        <p>Download either <a href="https://raw.github.com/nnattawat/fixedbg/master/dist/jquery.fixedbg.min.js">production</a> or <a href="https://raw.github.com/nnattawat/fixedbg/master/src/fixedbg.js">development</a> version then
+        simply include it with jquery.js</p>
+        <pre>&lt;script src="http://code.jquery.com/jquery-[latest].min.js"&gt;<br/>&lt;script src="jquery.fixedbg.min.js"&gt;</pre>
       </div>
     </div>
     <div class="page" id="page-3">
       <div class="content">
         <h3>How to use</h3>
+        <p>Create <code>&lt;div&gt;</code> per page in your HTML</p>
+        <div class="alert alert-info">You can use any class. Not necessary to be <code>.page</code></div>
+        <pre>&lt;div class="page"&gt;
+  &lt;!-- Content --&gt;
+&lt;/div&gt;
+&lt;div class="page"&gt;
+  &lt;!-- Content --&gt;
+&lt;/div&gt;
+        </pre>
+        <p>In CSS, add image backgroung to your <code>&lt;div&gt;</code></p>
+        <pre>&lt;style type="text/css"&gt;
+  .page:nth-child(1){
+    background-image: url("pic1.jpg");
+  }
+  .page:nth-child(2){
+    background-image: url("pic2.jpg");
+  }
+&lt;/style&gt;</pre>
+      <p>Then execute it in your js as</p>
+      <pre>$(function($) {
+  $(".page").fixedBG(); 
+});</pre>
       </div>
     </div>
-    <footer>
+    <div class="page" id="page-4">
+      <div class="content">
+        <h3>Additional info</h3>  
+        <p>
+          <strong>Note!</strong> by default I try to make image fully fit the screen by adding some CSS background attributes as
+        </p>
+          <pre>{
+  "background-size": "cover",
+  "background-repeat": "no-repeat"
+}</pre>
+        <p>
+          However, If you wanna style it yourself via CSS, you can disable it by passing option autoAdjust: false. Then, it won't add any extra CSS to your backgroud images.
+        </p>
+          <pre>$(".page").fixedBG({
+  autoAdjust: false
+});</pre>
+        <div class="alert alert-warning"><strong>Head's up!</strong> the plugin does not work well with Bootstrap CSS so the hot fix for now is to add into your CSS as the following
+        <pre>* {
+  box-sizing: content-box;          
+}</pre>
+        </div>
+      </div>
+    </div>
+    <!--footer>
       <div class="container">
       jQeury fixedBG is maintained by <a href="https://github.com/nnattawat">nnattawat</a>
       </div>
-    </footer>
+    </footer-->
     <script src="asset/js/jquery-1.10.2.min.js"></script>
     <!--script src="asset/js/bootstrap.min.js"></script-->
     <script src="asset/js/fixedbg.js"></script>
     <script type="text/javascript">
       $(function(){
-        $(".page").fixedBG(); 
+        $(".page").fixedBG({
+          autoAdjust: true
+        }); 
       });
     </script>
   </body>
