@@ -1,11 +1,16 @@
-#page-1{
-  background-image: url("../img/snow.jpeg");
-}
-#page-2{
-  background-image: url("../img/pic3.jpg");
-}
 #page-3{
   background-image: url("../img/pic4.jpg");
+}
+#page-1{
+  background-image: url("../img/rock.jpg");
+}
+#page-2{
+  background-image: url("../img/leaves.jpg");
+}
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: content-box;
 }
 footer{
 	padding: 20px;
@@ -15,9 +20,9 @@ footer{
 }
 
 .page {
-	/*padding: 90px;*/
+	padding: 90px 20%;
 }
 .page .content {
 	padding: 30px;
-	background: none repeat scroll 0 0 rgba(300, 300, 300, 0.7);
+	background: none repeat scroll 0 0 rgba(300, 300, 300, 0.8);
 }
