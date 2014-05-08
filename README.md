@@ -1,6 +1,6 @@
 # jQuery Plugin - Fixed Background Image
 
-A jQuery plugin to fix background image while scrolling through content of a page. Once new page is scrolled to then a background image changes. The plugin works responsively with both short and long contents.
+A jQuery plugin to fix background image while scrolling through content of a page. Once new page is scrolled to then a background image changes. The plugin works responsively with both short and long contents. You can learn more on [github.io](http://nnattawat.github.io/fixedBG/)
 
 ## Getting Started
 
