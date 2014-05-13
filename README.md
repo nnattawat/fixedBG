@@ -7,7 +7,7 @@ A jQuery plugin to fix background image while scrolling through content of a pag
 Download the [production version][min] or the [development version][max].
 
 [min]: https://raw.github.com/nnattawat/fixedbg/master/dist/jquery.fixedbg.min.js
-[max]: https://raw.github.com/nnattawat/fixedbg/master/src/fixedbg.js
+[max]: https://raw.github.com/nnattawat/fixedbg/master/dist/jquery.fixedbg.js
 
 In your web page:
 
