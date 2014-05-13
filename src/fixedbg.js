@@ -15,7 +15,7 @@
     var paddingButtom = dom.css('padding-bottom');
     paddingButtom = +paddingButtom.substring(0, paddingButtom.length -2);
 
-    var height = $(window).innerHeight() - paddingTop - paddingButtom
+    var height = $(window).innerHeight() - paddingTop - paddingButtom;
     dom.css("min-height", (height+"px"));
 
     // el's top position
@@ -25,7 +25,7 @@
     // el's bottom position
     var elBottom = elTop + dom.height() + paddingTop + paddingButtom; 
     dom.data("elBottom", elBottom);
-  }
+  };
 
   // Collection method.
   $.fn.fixedBG = function (options) {
@@ -62,7 +62,7 @@
     $(window).scroll(function(){
       var docViewTop = $(window).scrollTop();
 
-      self.each(function(p){
+      self.each(function(){
         var elTop = $(this).data("elTop");
         var elBottom = $(this).data("elBottom");
 
