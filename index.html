@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery - Fixed Background</title>
     <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asset/css/prettify.css" rel="stylesheet">
     <link href="asset/css/index.css" rel="stylesheet">
 
   </head>
@@ -28,7 +29,7 @@
         <h3>How to include</h3>
         <p>Download either <a href="https://raw.github.com/nnattawat/fixedbg/master/dist/jquery.fixedbg.min.js">compressed</a> or <a href="https://raw.github.com/nnattawat/fixedbg/master/dist/jquery.fixedbg.js">uncompressed</a> version then
         simply include it with jquery.js</p>
-        <pre>&lt;script src="http://code.jquery.com/jquery-[latest].min.js"&gt;<br/>&lt;script src="jquery.fixedbg.min.js"&gt;</pre>
+        <pre class="prettyprint">&lt;script src="http://code.jquery.com/jquery-[latest].min.js"&gt;<br/>&lt;script src="jquery.fixedbg.min.js"&gt;</pre>
       </div>
     </div>
     <div class="page" id="page-3">
@@ -36,7 +37,7 @@
         <h3>How to use</h3>
         <p>Create <code>&lt;div&gt;</code> per page in your HTML</p>
         <div class="alert alert-info">You can use any class. Not necessary to be <code>.page</code></div>
-        <pre>&lt;div class="page"&gt;
+        <pre class="prettyprint">&lt;div class="page"&gt;
   &lt;!-- Content --&gt;
 &lt;/div&gt;
 &lt;div class="page"&gt;
@@ -44,7 +45,7 @@
 &lt;/div&gt;
         </pre>
         <p>In CSS, add image backgroung to your <code>&lt;div&gt;</code></p>
-        <pre>&lt;style type="text/css"&gt;
+        <pre class="prettyprint">&lt;style type="text/css"&gt;
   .page:nth-child(1){
     background-image: url("pic1.jpg");
   }
@@ -53,7 +54,7 @@
   }
 &lt;/style&gt;</pre>
       <p>Then execute it in your js as</p>
-      <pre>$(function($) {
+      <pre class="prettyprint">$(function($) {
   $(".page").fixedBG(); 
 });</pre>
       </div>
@@ -64,18 +65,18 @@
         <p>
           <strong>Note!</strong> by default I try to make image fully fit the screen by adding some CSS background attributes as
         </p>
-          <pre>{
-  "background-size": "cover",
-  "background-repeat": "no-repeat"
+          <pre class="prettyprint">{
+  background-size: cover,
+  background-repeat: no-repeat
 }</pre>
         <p>
           However, If you wanna style it yourself via CSS, you can disable it by passing option autoAdjust: false. Then, it won't add any extra CSS to your backgroud images.
         </p>
-          <pre>$(".page").fixedBG({
+          <pre class="prettyprint">$(".page").fixedBG({
   autoAdjust: false
 });</pre>
         <div class="alert alert-warning"><strong>Head's up!</strong> the plugin does not work well with Bootstrap CSS so the hot fix for now is to add into your CSS as the following
-        <pre>* {
+        <pre class="prettyprint">* {
   box-sizing: content-box;          
 }</pre>
         </div>
@@ -87,10 +88,12 @@
       </div>
     </footer-->
     <script src="asset/js/jquery-1.10.2.min.js"></script>
-    <!--script src="asset/js/bootstrap.min.js"></script-->
+    <script src="asset/js/prettify.js"></script>
     <script src="asset/js/fixedbg.js"></script>
     <script type="text/javascript">
       $(function(){
+        prettyPrint();
+
         $(".page").fixedBG({
           autoAdjust: true
         }); 
