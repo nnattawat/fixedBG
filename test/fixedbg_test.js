@@ -38,4 +38,12 @@
     strictEqual(this.elems.fixedBG().first().css("background-attachment"), "fixed", 'should be fixed');
   });
 
+  test('default setting', function() {
+    var doms = this.elems.fixedBG();
+    doms.each( function() {
+      strictEqual($(this).css('background-size'), "cover", 'background-size should be cover');
+      strictEqual($(this).css('background-repeat'), "no-repeat", 'background-repeat should be no-repeat');
+    });
+  });
+
 }(jQuery));

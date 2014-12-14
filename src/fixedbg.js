@@ -8,7 +8,7 @@
 
 (function ($) {
 
-  var setHeightToWindowSize = function(dom){
+  var setHeightToWindowSize = function(dom) {
     var paddingTop = dom.css('padding-top');
     paddingTop = +paddingTop.substring(0, paddingTop.length -2);
 
@@ -31,11 +31,11 @@
   $.fn.fixedBG = function (options) {
     var self = this;
     // Define default setting
-    var settings = $.extend({
+    var settings = $.extend ({
       autoAdjust: true
     }, options );
 
-    this.each(function(){
+    this.each( function() {
       setHeightToWindowSize($(this));
     });
 
@@ -46,27 +46,27 @@
         - set background-size: cover; so that it try to make full image visible
         - set background-repeat: no-repeat;
     */ 
-    if(settings.autoAdjust){
-      this.css({
+    if (settings.autoAdjust) {
+      this.css ({
         "background-size": "cover",
         "background-repeat": "no-repeat"
       });
     }
 
-    $(window).resize(function(){
-      self.each(function(){
+    $(window).resize( function() {
+      self.each( function() {
         setHeightToWindowSize($(this));
       });
     });
 
-    $(window).scroll(function(){
+    $(window).scroll( function() {
       var docViewTop = $(window).scrollTop();
 
-      self.each(function(){
+      self.each( function() {
         var elTop = $(this).data("elTop");
         var elBottom = $(this).data("elBottom");
 
-        if ( docViewTop >= elTop && elBottom > docViewTop) {
+        if (docViewTop >= elTop && elBottom > docViewTop) {
           self.css("background-attachment", "scroll");
           // div is in the visible window
           $(this).css("background-attachment", "fixed");
