@@ -10,6 +10,10 @@ Download the [production version][min] or the [development version][max].
 [min]: https://raw.github.com/nnattawat/fixedbg/master/dist/jquery.fixedbg.min.js
 [max]: https://raw.github.com/nnattawat/fixedbg/master/dist/jquery.fixedbg.js
 
+or install using bower
+
+<pre>bower install fixedbg</pre>
+
 In your web page:
 
 ```html
